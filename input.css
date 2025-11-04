@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+
+@font-face {
+  font-family: 'Celias Light';
+  src: url('/Celias/CeliasLight.otf') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Resist Sans';
+  src: url('/resistsans/fonnts.com-resistdisplay-regular.otf') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@theme{
+    --font-celias-light: 'Celias Light', sans-serif;
+    --font-resist-sans: 'Resist Sans', sans-serif;
+}
+
+@layer base {
+  html {
+    font-weight: 350;
+    font-family: var(--font-sans);
+  }
+}

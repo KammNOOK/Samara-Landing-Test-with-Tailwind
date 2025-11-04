@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Samara Landing Page — Responsive</title>
+
+  <!-- Tailwind Play CDN (quick start). Replace with your build output in production. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Optional: you can configure Tailwind here if you need custom screens or fonts -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          // keep your custom sizes available if you want
+        }
+      }
+    }
+  </script>
+
+  <!-- If you have an output.css in your workflow, keep linking it (commented as optional) -->
+  <!-- <link href="src/output.css" rel="stylesheet"> -->
+
+  <style>
+    /* small helper so fixed header doesn't overlap content */
+    body { background: white; }
+  </style>
+</head>
+<body class="antialiased text-slate-900">
+
+  <!-- ========== Header (fixed) — hamburger left, Design Yours right ========== -->
+  <header class="fixed top-0 left-0 w-full bg-black text-white z-50">
+    <div class="max-w-[1600px] mx-auto flex items-center justify-between px-6 md:px-10 lg:px-14 py-3 lg:py-8">
+      <!-- Left: Hamburger (keeps the existing glyph feel) -->
+      <button aria-label="Open menu" class="flex items-center justify-center">
+        <div class="text-[#737373] text-2xl lg:text-[22px]">☰</div>
+      </button>
+
+      <!-- Right: Design yours -->
+      <div>
+        <button class="bg-[#0096f7] py-2 px-4 rounded-2xl text-sm lg:text-base hover:brightness-95 transition">
+          Design yours
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- spacer to offset fixed header -->
+  <div class="h-16 lg:h-[100px]"></div>
+
+  <!-- ========== Small top alert strip ========== -->
+  <section class="bg-black text-white">
+    <div class="flex flex-col md:flex-row items-center justify-center py-6 md:py-8 gap-4 md:gap-9">
+      <p class="text-[14px] md:text-[20px] lg:text-[27px] text-center md:text-left max-w-3xl">
+        Support for homeowners in fire-affected Southern California communities
+      </p>
+      <div>
+        <button class="bg-[#ff4000] px-4 py-2 rounded-2xl text-sm md:text-base">Find out more</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Hero (background image) ========== -->
+  <section class="bg-[url('/hero-xl-10-2880.png')] bg-[#ffffff] bg-cover bg-center
+                  lg:h-[1200px] md:h-[800px] h-[520px]">
+    <div class="max-w-[1500px] mx-auto px-6 lg:px-0">
+      <!-- Use responsive flex stacking: horizontally on large, stacked on md/sm -->
+      <div class="flex flex-col lg:flex-row items-start lg:items-start justify-center gap-6 lg:gap-50 py-8 lg:py-45">
+        <p class="text-[22px] md:text-[28px] lg:text-[40px]">Small living,<br class="hidden lg:block"> supersized.</p>
+
+        <img class="h-28 md:h-44 lg:h-60 object-contain" src="hero-xl-10-title.svg" alt="Backyard XL 10">
+
+        <div class="max-w-md lg:max-w-lg">
+          <p class="text-[15px] md:text-[20px] lg:text-[26px]">
+            Introducing Backyard XL 10:<br> Two bedrooms, two baths.<br> 950 square feet.
+          </p>
+          <button class="mt-3 bg-white px-4 py-2 font-semibold border-transparent shadow rounded-[10px] text-sm md:text-base">
+            Learn more →
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Intro big heading ========== -->
+  <section class="flex flex-col justify-center text-left mx-auto py-8 lg:py-26 max-w-[1500px] px-6 lg:px-10">
+    <div class="w-full mx-auto">
+      <!-- Keep big desktop type at lg, scale down for md/sm -->
+      <h1 class="lg:text-[130px] md:text-[68px] text-[36px] leading-tight lg:leading-128 md:leading-tight pb-8 lg:pb-20 tracking-tighter font-light">
+        Backyard
+        <img class="inline-block lg:h-28 md:h-20 h-12 align-middle mx-2" src="intro-studio-800.png" alt="house icon">
+        is the<br>
+        super simple, smartly<br> customizable,
+        <img class="inline-block lg:h-28 md:h-20 h-12 align-middle mx-2" src="intro-xl-800.png" alt="house icon">
+        all-new<br> ADU
+        <img class="inline-block lg:h-28 md:h-20 h-12 align-middle mx-2" src="intro-twobed-800.png" alt="house icon">
+        from Samara.
+      </h1>
+
+      <h2 class="lg:text-[36px] md:text-[24px] text-[18px] leading-[1.1] mt-4">
+        We handle everything, from installation to financing.<br>
+        <span class="text-[#999999]">Available now in California.</span>
+      </h2>
+
+      <p class="text-[#999999] py-4 text-sm md:text-base">
+        Not in California?
+        <span class="text-black">
+          <a href="Samara Landing Page.html"> Tell us where to build next</a>
+        </span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== Slider placeholders (kept minimal) ========== -->
+  <section class="px-4 lg:px-0">
+    <div class="max-w-[1500px] mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        <img id="slide-1" class="w-full object-cover rounded" src="first-panel.jpg" alt="">
+        <img id="slide-2" class="w-full object-cover rounded" src="second-panel.jpg" alt="">
+        <img id="slide-3" class="w-full object-cover rounded" src="third-panel.jpg" alt="">
+        <img id="slide-4" class="w-full object-cover rounded" src="fourth-panel.jpg" alt="">
+        <img id="slide-5" class="w-full object-cover rounded" src="fifth-panel.jpg" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Feature strip ========== -->
+  <section class="py-8 lg:py-30 bg-[#fdfdf7]">
+    <div class="max-w-[1500px] mx-auto px-6 lg:px-8">
+      <div class="flex flex-col items-center text-center gap-4 lg:gap-6">
+        <p class="text-2xl md:text-4xl lg:text-6xl font-medium">Rent it. Divide it. Work there. Or live in it.</p>
+        <p class="text-2xl md:text-4xl lg:text-6xl text-[#989894]">Unlock the potential of your yard.</p>
+      </div>
+
+      <div class="flex items-center justify-center px-4 py-6">
+        <div class="flex items-center gap-3 bg-[#f5f5ef] px-4 md:px-8 py-3 rounded-[10px]">
+          <p class="text-sm md:text-base text-[#989894]">As seen in:</p>
+          <img class="h-2 md:h-5" src="fastcompany.svg" alt="">
+          <img class="h-2 md:h-6" src="bloomberg.svg" alt="">
+          <img class="h-3 md:h-6" src="wsj.svg" alt="">
+          <img class="h-3 md:h-7" src="wallpaper.svg" alt="">
+        </div>
+      </div>
+
+      <!-- Two cards — become stacked on small screens -->
+      <div class="flex flex-col lg:flex-row justify-center gap-6 lg:gap-6 py-4 lg:py-16 px-2">
+        <!-- Card 1 -->
+        <div class="relative w-full lg:w-[720px] h-80 lg:h-[470px] bg-[url('/samarashowroom.avif')] bg-cover bg-center rounded-[15px] shadow-lg overflow-hidden">
+          <div class="absolute inset-0 bg-black/20 rounded-[20px]"></div>
+          <p class="absolute top-6 left-6 text-white text-[18px] md:text-[24px] lg:text-[30px] leading-snug font-light max-w-[80%]">
+            Experience Backyard in person.<br>
+            Visit a showroom →
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="relative w-full lg:w-[720px] h-80 lg:h-[470px] rounded-[15px] shadow-lg overflow-hidden">
+          <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover" src="Samara - Backyard Homes and ADUs.mp4"></video>
+          <div class="absolute inset-0 bg-black/25"></div>
+          <p class="absolute top-6 left-6 text-white text-[18px] md:text-[24px] lg:text-[30px] leading-snug font-light max-w-[80%]">
+            Learn how we squeeze a whole house into<br>
+            your yard.<br>
+            How it works →
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Full-width video band ========== -->
+  <section class="bg-[#263db5]">
+    <div class="max-w-[1600px] mx-auto px-6">
+      <video autoplay muted loop class="w-full h-auto object-cover"> 
+        <source src="Samara - Backyard Homes and ADUs 2.mp4" type="video/mp4">
+      </video>
+    </div>
+  </section>
+
+  <!-- ========== Simple heading ========== -->
+  <section class="pt-8 lg:pt-25">
+    <div class="flex flex-col items-center justify-center">
+      <h2 class="text-3xl md:text-5xl lg:text-6xl text-center">Five sizes.<span class="text-[#999999]"> Tons of possibility.</span></h2>
+    </div>
+  </section>
+
+  <!-- ========== Another slider placeholder ========== -->
+  <section class="py-6 lg:py-25 px-4">
+    <div class="max-w-[1500px] mx-auto grid grid-cols-2 md:grid-cols-5 gap-3">
+      <img id="slide-6" class="w-full object-cover rounded" src="first-panel.jpg" alt="">
+      <img id="slide-7" class="w-full object-cover rounded" src="second-panel.jpg" alt="">
+      <img id="slide-8" class="w-full object-cover rounded" src="third-panel.jpg" alt="">
+      <img id="slide-9" class="w-full object-cover rounded" src="fourth-panel.jpg" alt="">
+      <img id="slide-10" class="w-full object-cover rounded" src="fifth-panel.jpg" alt="">
+    </div>
+  </section>
+
+  <!-- ========== Steps section (responsive stacks) ========== -->
+  <section class="py-6 lg:py-10 px-4">
+    <div class="max-w-[1500px] mx-auto">
+      <div class="flex flex-col lg:flex-row justify-center gap-8 lg:gap-40">
+        <div class="w-full lg:w-1/3">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl">Get Backyard in<br>four simple steps.</h2>
+          <p class="text-2xl md:text-3xl lg:text-5xl text-[#999999] mt-2">And as few as eight<br> weeks on site.</p>
+        </div>
+
+        <div class="w-full lg:w-2/3 flex flex-col md:flex-row gap-6">
+          <div class="flex-1">
+            <span class="text-2xl py-1.5 px-2 bg-black text-white rounded-[10px]">01</span>
+            <h3 class="py-4 text-2xl">Design yours</h3>
+            <p class="text-sm md:text-base text-[#787878] w-full md:w-[300px]">Tailor your unit with a layout and customizations that reflect your style and needs.</p>
+            <img class="mt-3 rounded-[10px] w-full h-[220px] md:h-[280px] lg:h-[340px] object-cover" src="steps-configure-630.webp" alt="">
+          </div>
+
+          <div class="flex-1">
+            <span class="text-2xl py-1.5 px-2 bg-white border border-[#999999] text-[#999999] rounded-[10px]">02</span>
+            <h3 class="py-4 text-2xl">Sign off</h3>
+            <p class="text-sm md:text-base text-[#787878] w-full md:w-[300px]">We visit your site to create a complete proposal for the work required to install Backyard.</p>
+            <video class="mt-3 rounded-[10px] w-full h-[220px] md:h-[280px] lg:h-[340px]" src="backyard.mp4"></video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Steps 3 & 4 + CTAs ========== -->
+  <section class="py-6 lg:py-10 px-4">
+    <div class="max-w-[1500px] mx-auto">
+      <div class="flex flex-col lg:flex-row gap-8 lg:gap-40">
+        <div class="flex-1 flex flex-col gap-6">
+          <div>
+            <span class="text-2xl py-1.5 px-2 bg-white border border-[#999999] text-[#999999] rounded-[10px]">03</span>
+            <h3 class="py-4 text-2xl">Sit back</h3>
+            <p class="text-sm md:text-base text-[#787878] w-full md:w-[320px]">We secure all building permits, manufacture your unit, and ready your site. You get to relax.</p>
+            <video class="mt-3 rounded-[10px] w-full h-[220px] md:h-[280px] lg:h-[340px]" src="construction.mp4"></video>
+          </div>
+
+          <div>
+            <span class="text-2xl py-1.5 px-2 bg-black text-white rounded-[10px]">04</span>
+            <h3 class="py-4 text-2xl">Get your keys</h3>
+            <p class="text-sm md:text-base text-[#787878] w-full md:w-[300px]">After as few as eight weeks on site with minimal disruption to your life, your Backyard is ready to use.</p>
+            <img class="mt-3 rounded-[10px] w-full h-[220px] md:h-[280px] lg:h-[340px] object-cover scale-x-[-1]" src="steps-get-your-keys-portrait-1100.webp" alt="">
+          </div>
+        </div>
+
+        <div class="flex-1">
+          <h3 class="py-4 text-2xl">Want the details?</h3>
+          <p class="text-2xl md:text-2xl text-[#999999] w-full md:w-[360px]">Learn more about our fast, easy installation process.</p>
+          <div class="pt-2 flex flex-col gap-3">
+            <button class="bg-[#f5f5f5] px-6 py-3 rounded-2xl text-[#0096f7]">How it works</button>
+            <button class="bg-[#0096f7] px-6 py-3 rounded-2xl text-white">Design yours</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Additional image galleries (kept grid) ========== -->
+  <section class="py-6 px-4">
+    <div class="max-w-[1500px] mx-auto grid grid-cols-2 md:grid-cols-5 gap-3">
+      <img id="slide-11" class="w-full object-cover rounded" src="__xl-2880 f1.webp" alt="">
+      <img id="slide-12" class="w-full object-cover rounded" src="__xl-2880 f2.webp" alt="">
+      <img id="slide-13" class="w-full object-cover rounded" src="__xl-2880 f3.webp" alt="">
+      <img id="slide-14" class="w-full object-cover rounded" src="__xl-2880 f4.webp" alt="">
+      <img id="slide-15" class="w-full object-cover rounded" src="__xl-10-2880 f5.webp" alt="">
+    </div>
+  </section>
+
+  <!-- ========== Uses gallery ========== -->
+  <section class="py-6 px-4">
+    <div class="max-w-[1500px] mx-auto">
+      <p class="text-2xl md:text-4xl lg:text-5xl">A lot can happen<br>with a little space.</p>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-3 mt-4">
+        <img id="slide-16" class="w-full object-cover rounded" src="uses-office-1080.webp" alt="">
+        <img id="slide-17" class="w-full object-cover rounded" src="uses-income-1080.webp" alt="">
+        <img id="slide-18" class="w-full object-cover rounded" src="uses-family-1080.webp" alt="">
+        <img id="slide-19" class="w-full object-cover rounded" src="uses-business-1080.webp" alt="">
+        <img id="slide-20" class="w-full object-cover rounded" src="uses-dreams-1080.webp" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Two-column hero with cards ========== -->
+  <section class="bg-[url('/bento-sky-2880.jpg')] bg-cover py-8 lg:py-35 px-4">
+    <div class="max-w-[1500px] mx-auto flex flex-col lg:flex-row gap-6 lg:gap-28 items-start">
+      <div class="w-full lg:w-1/2">
+        <p class="text-2xl md:text-4xl lg:text-5xl w-full lg:w-80 py-2">A better future starts in your own Backyard.</p>
+        <p class="text-sm md:text-base lg:text-lg w-full lg:w-120 font-medium py-2 leading-tight">
+          Backyard is designed for a better tomorrow. Thanks to top-tier energy efficiency and optional solar arrays, Backyard cuts your dependence on the grid. Think of it as design with purpose — good for you, great for the planet.
+        </p>
+      </div>
+
+      <div class="w-full lg:w-1/2 flex flex-col md:flex-row gap-4 lg:gap-6">
+        <div class="bg-white/30 backdrop-blur-md border-transparent shadow-md rounded-[10px] p-4 w-full md:w-1/2 lg:w-1/2">
+          <p class="text-5xl md:text-6xl lg:text-8xl font-bold">2x</p>
+          <p class="text-xl lg:text-3xl">more efficient</p>
+          <p class="text-sm md:text-base lg:text-base py-4 font-medium">Over 2x more energy-efficient than an equivalently-sized home.</p>
+        </div>
+
+        <div class="bg-white/30 backdrop-blur-md border-transparent shadow-md rounded-[10px] p-4 w-full md:w-1/2 lg:w-1/2">
+          <p class="text-5xl md:text-6xl lg:text-8xl font-bold">0<span class="border-2 rounded-sm px-2 py-1 text-[14px] md:text-[18px]">kWh</span></p>
+          <p class="text-xl lg:text-3xl">net grid utilization</p>
+          <p class="text-sm md:text-base lg:text-base py-4 font-medium">As few as 0 kWh drawn from the grid annually (net) with optional solar arrays.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Performance & Net-zero band ========== -->
+  <section class="bg-[url('/bento-high-performance-2880.jpg')] bg-center py-8 lg:py-20 px-4">
+    <div class="max-w-[1500px] mx-auto flex flex-col lg:flex-row justify-end items-center gap-6">
+      <div class="bg-[#f5f2de] rounded-[20px] py-6 px-6 lg:px-8 lg:pr-35 w-full lg:w-[420px]">
+        <p class="text-xl lg:text-3xl w-full lg:w-70">High performance prefab</p>
+        <p class="py-2 text-[#5d5c59] text-sm lg:text-base">Backyard is factory assembled using our best-in-class construction system designed for the long haul.</p>
+        <div class="pt-4">
+          <a href="" class="text-sm md:text-base">Details +</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Two feature tiles side-by-side (stack on mobile) ========== -->
+  <section class="py-6 px-4">
+    <div class="max-w-[1500px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-[url('/doorway-fire-resistant-mobile-1200.webp')] bg-cover rounded-[10px] min-h-60 flex items-end">
+        <div class="bg-[#263db5] rounded-[20px] p-6 m-4 text-white w-full md:w-[60%]">
+          <p class="text-xl">Fire resistant by design</p>
+          <p class="text-sm text-[#8a97d7] py-2">Backyard is factory assembled using our best-in-class construction system designed for the long haul.</p>
+          <div class="pt-2"><a class="text-white" href="">Details +</a></div>
+        </div>
+      </div>
+
+      <div class="bg-[url('/net-zero-solar-roof-2880.jpg')] bg-cover rounded-[10px] min-h-60 flex items-end">
+        <div class="bg-[#ffbd00] rounded-[20px] p-6 m-4 text-black w-full md:w-[60%]">
+          <p class="text-xl">Net zero solar roof</p>
+          <p class="text-sm text-[#5d5c59] py-2">Backyard is factory assembled using our best-in-class construction system designed for the long haul.</p>
+          <div class="pt-2"><a href="">Details +</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Availability band (cta) ========== -->
+  <section class="py-8 px-4 bg-[#fdfdf7]">
+    <div class="max-w-[1500px] mx-auto flex flex-col lg:flex-row items-center justify-center gap-6">
+      <div class="bg-[#f7f7f0] rounded-[20px] p-6 lg:p-10 flex flex-col lg:flex-row items-start gap-6 w-full">
+        <div class="flex-1">
+          <p class="text-2xl md:text-4xl lg:text-5xl">Available in California.<br><span class="text-[#949490] text-sm md:text-base">Starting at $152k<br>plus installation.</span></p>
+          <p class="text-2xl md:text-4xl lg:text-5xl text-[#0096f7] py-4">Design yours →</p>
+          <p class="text-[#949490] text-sm md:text-base">Not in California? <span class="text-[#5d5c59]">Tell us where to build next</span></p>
+        </div>
+        <div class="flex-1 flex justify-end">
+          <img class="h-40 md:h-80 lg:h-150 object-contain" src="onebedroom.frontdoors.solarfull.basebonewhite.roofdarkbronze.front-4016.png" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Showroom cards grid ========== -->
+  <section class="py-6 px-4">
+    <div class="max-w-[1500px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="relative w-full h-[360px] bg-[url('/showroom-landscape-720.webp')] bg-center bg-cover rounded-[10px] shadow-lg overflow-hidden">
+        <p class="absolute top-3 left-5 text-white text-[16px] md:text-[20px] leading-snug max-w-[80%]">Seeing is believing.<br><span class="text-[#dceaf3]">Visit a showroom →</span></p>
+      </div>
+
+      <div class="relative w-full h-[360px] bg-[url('/multiunit-portrait-1200.webp')] bg-left bg-cover rounded-[10px] shadow-lg overflow-hidden">
+        <p class="absolute top-3 left-5 text-[#979590] text-[16px] md:text-[20px] leading-snug max-w-[80%]">Backyard Multiunit.<br><span class="text-black">For developers →</span></p>
+      </div>
+
+      <div class="relative w-full h-[360px] bg-[url('/configure-landscape-720.webp')] bg-cover rounded-[10px] shadow-lg overflow-hidden">
+        <p class="absolute top-3 left-5 text-[#979590] text-[16px] md:text-[20px] leading-snug max-w-[80%]">Make Backyard yours.<br><span class="text-black">Configure in 3D →</span></p>
+      </div>
+
+      <div class="relative w-full h-[360px] bg-[url('/doorway-fire-resistant-720.webp')] bg-cover rounded-[10px] shadow-lg overflow-hidden">
+        <p class="absolute top-3 left-5 text-[#60798b] text-[16px] md:text-[20px] leading-snug max-w-[80%]">Fire resistant by design.<br><span class="text-black">Learn more →</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Footer ========== -->
+  <footer class="bg-[#fdfdf7] py-10 px-4">
+    <div class="max-w-[1500px] mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+        <div>
+          <p class="text-[#979590] text-lg md:text-[26px] font-light">Samara</p>
+          <ul class="mt-3 space-y-2">
+            <li><a class="text-[18px] md:text-[20px] font-light" href="#">News</a></li>
+            <li><a class="text-[18px] md:text-[20px] font-light" href="#">Insights</a></li>
+            <li><a class="text-[18px] md:text-[20px] font-light" href="#">Jobs</a></li>
+            <li><a class="text-[18px] md:text-[20px] font-light" href="#">Showrooms</a></li>
+            <li><a class="text-[18px] md:text-[20px] font-light" href="#">For Developers</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="text-[#979590] text-lg md:text-[26px] font-light">Backyard</p>
+          <ul class="mt-3 space-y-2">
+            <li><a class="text-[18px] md:text-[20px] font-light" href="#">Models</a></li>
+            <li><a class="text-[18px] md:text-[20px] font-light" href="#">Design yours</a></li>
+            <li><a class="text-[18px] md:text-[20px] font-light" href="#">How it works</a></li>
+            <li><a class="text-[18px] md:text-[20px] font-light" href="#">Financing</a></li>
+            <li><a class="text-[18px] md:text-[20px] font-light" href="#">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="text-[#979590] text-lg md:text-[26px] font-light">Social</p>
+          <ul class="mt-3 space-y-2">
+            <li><a class="text-[18px] md:text-[20px] font-light" href="#">Instagram</a></li>
+            <li><a class="text-[18px] md:text-[20px] font-light" href="#">YouTube</a></li>
+            <li><a class="text-[18px] md:text-[20px] font-light" href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="py-3 text-sm md:text-base">Have questions?</p>
+          <button class="bg-[#0096f7] py-2 px-6 rounded-xl text-white whitespace-nowrap">Contact us</button>
+          <p class="py-3 text-sm">Get updates<br><span class="text-[#a8a8a4]">Drop us your email to learn what's next.</span></p>
+          <input class="py-2 px-3 bg-[#f5f5ef] border border-[#e4e4df] rounded-xl w-full md:w-auto" type="text" placeholder="Email address">
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <p class="text-[#b2b2ae] text-sm">© 2025 Samara Living Inc.</p>
+        <div class="text-sm text-[#b2b2ae]">
+          <p>1. “Net zero” may change for build sites with significant shading.</p>
+          <div class="flex gap-3 py-2">
+            <p>Privacy policy</p>
+            <p>Terms of service</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Keep your JS include (if you have site interactions). -->
+  <script src="samara.js"></script>
+</body>
+</html>
